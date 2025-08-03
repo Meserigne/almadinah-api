@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: almadinah-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        value: mongodb+srv://almadinah_admin:Almadinah2024@cluster0.nfzpdun.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: almadinah_jwt_secret_2024_very_secure_key
+      - key: FRONTEND_URL
+        value: https://almadinah-boutique.com 
