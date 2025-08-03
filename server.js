@@ -28,15 +28,7 @@ app.use('/api/orders', require('./routes/orders'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/upload', require('./routes/upload'));
-
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
-    message: 'Almadinah API is running',
-    timestamp: new Date().toISOString()
-  });
-});
+app.use('/api/health', require('./routes/health'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
